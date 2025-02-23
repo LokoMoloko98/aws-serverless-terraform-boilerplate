@@ -29,7 +29,7 @@ module "networking" {
   region                                 = var.region
   music-catalogue-table-ops-function-arn = module.compute.music-catalogue-table-ops-function-arn
   music-catalogue-users-function-arn     = module.compute.music-catalogue-users-function-arn
-  cognito_user_pool_client_id            = module.cognito.cognito_user_pool_client_id
+  cognito_user_pool_id            = module.cognito.cognito_user_pool_id
   cognito_user_pool_endpoint             = module.cognito.cognito_user_pool_endpoint
   domain_name                            = var.domain_name
 }

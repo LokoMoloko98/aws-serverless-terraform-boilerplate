@@ -21,7 +21,7 @@ variable "domain_name" {
   type = string
 }
 
-variable "cognito_user_pool_client_id" {
+variable "cognito_user_pool_id" {
   type = string
 }
 

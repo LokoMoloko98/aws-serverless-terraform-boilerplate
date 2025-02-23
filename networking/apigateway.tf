@@ -93,7 +93,7 @@ resource "aws_apigatewayv2_authorizer" "music-catalogue-api-gateway-authorizer" 
   name             = "music-catalogue-cognito-authorizer"
 
   jwt_configuration {
-    audience = ["${var.cognito_user_pool_client_id}"]
+    audience = ["${var.cognito_user_pool_id}"]
     issuer   = "https://${var.cognito_user_pool_endpoint}"
   }
 }

@@ -10,6 +10,10 @@ output "cognito_user_pool_endpoint" {
   value = aws_cognito_user_pool.music-catalogue-user_pool.endpoint
 }
 
-output "cognito_user_pool_client_id" {
+output "cognito_user_pool_id" {
   value = aws_cognito_user_pool.music-catalogue-user_pool.id
+}
+
+output "cognito_user_pool_client_id" {
+  value = aws_cognito_user_pool_client.music-catalogue-user_pool_client.id
 }
