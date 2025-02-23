@@ -45,7 +45,6 @@ resource "aws_amplify_app" "boilerplate-app" {
   # Environment variables
   environment_variables = {
     _BUILD_TIMEOUT = "5",
-    APP_ID="${amplify-app-id.boilerplate-app.id}",
   }
 }
 
