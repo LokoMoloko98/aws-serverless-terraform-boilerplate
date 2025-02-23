@@ -14,9 +14,9 @@ variable "domain_name" {
 }
 
 variable "hosted_zone_id" {
-  type        = string
+  type = string
 }
 
 variable "repository_url" {
-  type        = string
+  type = string
 }

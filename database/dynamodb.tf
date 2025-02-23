@@ -1,6 +1,6 @@
 resource "aws_dynamodb_table" "users-dynamodb-table" {
-  name           = "${var.project_name}-users"
-  billing_mode     = "PAY_PER_REQUEST"
+  name         = "${var.project_name}-users"
+  billing_mode = "PAY_PER_REQUEST"
 
   attribute {
     name = "user_id"
@@ -11,7 +11,7 @@ resource "aws_dynamodb_table" "users-dynamodb-table" {
     name = "user_name"
     type = "S"
   }
-  
+
   hash_key  = "user_id"   # Partition Key
   range_key = "user_name" # Sort Key
 
@@ -44,8 +44,8 @@ resource "aws_dynamodb_table" "users-dynamodb-table" {
 
 # Example of a table for multiple user data storage
 resource "aws_dynamodb_table" "music-catalogue-dynamodb-table" {
-  name           = "${var.project_name}-music"
-  billing_mode     = "PAY_PER_REQUEST"
+  name         = "${var.project_name}-music"
+  billing_mode = "PAY_PER_REQUEST"
 
   attribute {
     name = "user_id"
@@ -58,7 +58,7 @@ resource "aws_dynamodb_table" "music-catalogue-dynamodb-table" {
   }
 
   # Table Keys
-  hash_key  = "song_id"   # Partition Key
+  hash_key  = "song_id" # Partition Key
   range_key = "user_id" # Sort Key
 
   # Enable stream if needed for real-time updates

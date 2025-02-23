@@ -7,7 +7,7 @@ resource "aws_iam_role_policy" "dynamodb-lambda-policy" {
       {
         "Effect" : "Allow",
         "Action" : ["dynamodb:*"],
-        "Resource" : ["${var.music-catalogue-users-function-arn}","${var.music-catalogue-table-ops-function-arn}"]
+        "Resource" : ["${var.music-catalogue-users-function-arn}", "${var.music-catalogue-table-ops-function-arn}"]
       }
     ]
   })

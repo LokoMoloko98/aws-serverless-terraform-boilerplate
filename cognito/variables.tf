@@ -22,5 +22,5 @@ variable "domain_name" {
 }
 
 variable "amplify_app_id" {
-  type        = string
+  type = string
 }

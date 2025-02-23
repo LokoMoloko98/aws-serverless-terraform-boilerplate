@@ -22,7 +22,7 @@ variable "domain_name" {
 }
 
 variable "repository_url" {
-  type        = string 
+  type = string
 }
 
 variable "amplify-service-role-arn" {

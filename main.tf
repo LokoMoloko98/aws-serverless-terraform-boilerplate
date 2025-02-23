@@ -35,11 +35,11 @@ module "networking" {
 }
 
 module "compute" {
-  source                                  = "./compute"
-  region                                  = var.region
-  project_name                            = var.project_name
-  lambda-role-arn                         = module.iam.lambda-dynamodb-role-arn
-  apigateway_arn                          = module.networking.apigateway_arn
+  source          = "./compute"
+  region          = var.region
+  project_name    = var.project_name
+  lambda-role-arn = module.iam.lambda-dynamodb-role-arn
+  apigateway_arn  = module.networking.apigateway_arn
 }
 
 module "amplify" {
