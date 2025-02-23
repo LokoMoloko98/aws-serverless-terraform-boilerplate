@@ -52,7 +52,7 @@ resource "aws_cognito_user_pool" "music-catalogue-user_pool" {
     allow_admin_create_user_only = true
     invite_message_template {
       email_message = "Sign up detaile: username: {username} and temporary password: {####}."
-      email_subject = "Welcome to  Swift Lift Club!"
+      email_subject = "Welcome to NextCognito Boilerplate!"
       sms_message   = "Sign up details: username: {username} and temporary password: {####}."
     }
   }
