@@ -86,7 +86,7 @@ resource "aws_cloudwatch_log_group" "main_api_gw" {
 }
 
 # Authorizer for the API Gateway routes, auth issued by cognito user pool
-resource "aws_apigatewayv2_authorizer" "music-catalogue_authorizer" {
+resource "aws_apigatewayv2_authorizer" "music-catalogue-api-gateway-authorizer" {
   api_id           = aws_apigatewayv2_api.music-catalogue-api-gateway.id
   authorizer_type  = "JWT"
   identity_sources = ["$request.header.Authorization"]
