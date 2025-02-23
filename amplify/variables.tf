@@ -28,3 +28,7 @@ variable "repository_url" {
 variable "amplify-service-role-arn" {
   type = string
 }
+
+variable "cognito_user_pool_client_id" {
+  type = string
+}

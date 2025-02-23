@@ -45,6 +45,8 @@ resource "aws_amplify_app" "boilerplate-app" {
   # Environment variables
   environment_variables = {
     _BUILD_TIMEOUT = "5",
+    NEXT_PUBLIC_AWS_REGION="us-east-1"
+    NEXT_PUBLIC_COGNITO_CLIENT_ID = var.cognito_user_pool_client_id
   }
 }
 
