@@ -53,6 +53,7 @@ resource "aws_cognito_user_pool" "music-catalogue-user_pool" {
     invite_message_template {
       email_message = "Sign up detaile: username: {username} and temporary password: {####}."
       email_subject = "Welcome to  Swift Lift Club!"
+      sms_message   = "Sign up details: username: {username} and temporary password: {####}."
     }
   }
 
