@@ -19,7 +19,7 @@ resource "aws_apigatewayv2_integration" "music-catalogue-table-ops-apigateway-la
   integration_type     = "AWS_PROXY"
   connection_type      = "INTERNET"
   description          = "music-catalogue-table-ops lambda function integration"
-  integration_uri      = var.music-catalogue-table-ops-function-name
+  integration_uri      = var.music-catalogue-table-ops-function-arn
   passthrough_behavior = "WHEN_NO_MATCH"
 }
 
@@ -28,7 +28,7 @@ resource "aws_apigatewayv2_integration" "music-catalogue-users-apigateway-lambda
   integration_type     = "AWS_PROXY"
   connection_type      = "INTERNET"
   description          = "music-catalogue lambda function integration"
-  integration_uri      = var.music-catalogue-users-function-name
+  integration_uri      = var.music-catalogue-users-function-arn
   passthrough_behavior = "WHEN_NO_MATCH"
 }
 

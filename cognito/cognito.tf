@@ -95,7 +95,7 @@ resource "aws_cognito_user_pool_client" "music-catalogue-user_pool_client" {
 
   callback_urls = [
     "https://${var.domain_name}/callback",
-    "http://localhost:3000/callback" # For local testing
+    "http://localhost:3000/callback" #For local testing
   ]
 
   logout_urls = [
@@ -116,20 +116,3 @@ resource "aws_ssm_parameter" "region" {
   type  = "SecureString"
   value = var.region
 }
-
-# resource "aws_cognito_user_pool_domain" "main" {
-#   domain          = "auth-swift-lift-club.moloko-mokubedi.co.za"
-#   certificate_arn = var.music-catalogue-cert_arn
-#   user_pool_id    = aws_cognito_user_pool.music-catalogue-user_pool.id
-# }
-
-# resource "aws_route53_record" "auth-cognito-A-record" {
-#   name    = aws_cognito_user_pool_domain.main.domain
-#   type    = "A"
-#   zone_id = var.hosted_zone_id
-#   alias {
-#     name                   = aws_cognito_user_pool_domain.main.cloudfront_distribution_arn
-#     zone_id                = "Z2FDTNDATAQYW2" # CloudFront Zone ID
-#     evaluate_target_health = false
-#   }
-# }

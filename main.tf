@@ -11,9 +11,7 @@ module "cognito" {
   lambda-role-arn = module.iam.lambda-dynamodb-role-arn
   apigateway_arn  = module.networking.apigateway_arn
   domain_name     = var.domain_name
-  # swift_lift_club_cert_arn = module.networking.swift_lift_club_cert_arn
-  # hosted_zone_id           = var.hosted_zone_id
-  amplify_app_id = module.amplify.amplify_app_id
+  amplify_app_id  = module.amplify.amplify_app_id
 }
 
 module "iam" {
@@ -26,23 +24,22 @@ module "iam" {
 }
 
 module "networking" {
-  source                                  = "./networking"
-  project_name                            = var.project_name
-  region                                  = var.region
-  music-catalogue-table-ops-function-name = module.compute.music-catalogue-table-ops-function-name
-  music-catalogue-users-function-name     = module.compute.music-catalogue-users-function-name
-  cognito_user_pool_client_id             = module.cognito.cognito_user_pool_client_id
-  cognito_user_pool_endpoint              = module.cognito.cognito_user_pool_endpoint
-  domain_name                             = var.domain_name
+  source                                 = "./networking"
+  project_name                           = var.project_name
+  region                                 = var.region
+  music-catalogue-table-ops-function-arn = module.compute.music-catalogue-table-ops-function-arn
+  music-catalogue-users-function-arn     = module.compute.music-catalogue-users-function-arn
+  cognito_user_pool_client_id            = module.cognito.cognito_user_pool_client_id
+  cognito_user_pool_endpoint             = module.cognito.cognito_user_pool_endpoint
+  domain_name                            = var.domain_name
 }
 
 module "compute" {
-  source          = "./compute"
-  region          = var.region
-  project_name    = var.project_name
-  lambda-role-arn = module.iam.lambda-dynamodb-role-arn
-  apigateway_arn  = module.networking.apigateway_arn
-  # trips-dynamodb-table-name = module.database.trips-dynamodb-table-name
+  source                                  = "./compute"
+  region                                  = var.region
+  project_name                            = var.project_name
+  lambda-role-arn                         = module.iam.lambda-dynamodb-role-arn
+  apigateway_arn                          = module.networking.apigateway_arn
 }
 
 module "amplify" {
@@ -52,7 +49,6 @@ module "amplify" {
   lambda-role-arn          = module.iam.lambda-dynamodb-role-arn
   apigateway_arn           = module.networking.apigateway_arn
   domain_name              = var.domain_name
-  # swift_lift_club_cert_arn = module.networking.swift_lift_club_cert_arn
   repository_url           = var.repository_url
   amplify-service-role-arn = module.iam.amplify-service-role-arn
 }

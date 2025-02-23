@@ -21,10 +21,6 @@ variable "domain_name" {
   type = string
 }
 
-# variable "swift_lift_club_cert_arn" {
-#   type = string
-# }
-
 variable "repository_url" {
   type        = string 
 }

@@ -28,6 +28,7 @@ resource "aws_amplify_app" "boilerplate-app" {
         preBuild:
           commands:
             - npm ci --cache .npm --prefer-offline
+            - npm install
         build:
           commands:
             - npm run build

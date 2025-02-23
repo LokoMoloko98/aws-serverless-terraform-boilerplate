@@ -12,7 +12,6 @@ resource "aws_lambda_function" "music-catalogue-table-ops" {
       Name           = "${var.project_name}-music-catalogue-table-ops"
       Environment    = "production"
       Costs          = "${var.project_name}"
-      # DYNAMODB_TABLE = var.trips-dynamodb-table-name
     }
   }
 }
@@ -31,7 +30,6 @@ resource "aws_lambda_function" "music-catalogue-users" {
       Name           = "${var.project_name}-music-catalogue-users"
       Environment    = "production"
       Costs          = "${var.project_name}"
-      # DYNAMODB_TABLE = var.users-dynamodb-table-name
     }
   }
 }

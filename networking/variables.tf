@@ -9,11 +9,11 @@ variable "project_name" {
   type        = string
 }
 
-variable "music-catalogue-users-function-name" {
+variable "music-catalogue-users-function-arn" {
   type = string
 }
 
-variable "music-catalogue-table-ops-function-name" {
+variable "music-catalogue-table-ops-function-arn" {
   type = string
 }
 
