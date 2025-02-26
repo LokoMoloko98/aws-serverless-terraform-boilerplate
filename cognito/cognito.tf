@@ -51,7 +51,7 @@ resource "aws_cognito_user_pool" "music-catalogue-user_pool" {
   admin_create_user_config {
     allow_admin_create_user_only = true
     invite_message_template {
-      email_message = "Sign up detaile: username: {username} and temporary password: {####}."
+      email_message = "Sign up details: username: {username} and temporary password: {####}. Sign up here: https://${var.domain_name}/signin"
       email_subject = "Welcome to NextCognito Boilerplate!"
       sms_message   = "Sign up details: username: {username} and temporary password: {####}."
     }
@@ -102,17 +102,4 @@ resource "aws_cognito_user_pool_client" "music-catalogue-user_pool_client" {
     "https://${var.domain_name}/logout",
     "http://localhost:3000/logout"
   ]
-}
-
-
-resource "aws_ssm_parameter" "client_id" {
-  name  = "/amplify/shared/${var.amplify_app_id}/NEXT_PUBLIC_COGNITO_CLIENT_ID"
-  type  = "SecureString"
-  value = aws_cognito_user_pool_client.music-catalogue-user_pool_client.id
-}
-
-resource "aws_ssm_parameter" "region" {
-  name  = "/amplify/shared/${var.amplify_app_id}/NEXT_PUBLIC_AWS_REGION"
-  type  = "SecureString"
-  value = var.region
 }

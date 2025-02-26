@@ -1,6 +1,6 @@
 #Create an IAM role
 resource "aws_iam_role" "music-catalogue-lambda-role" {
-  name = "${var.project_name}-iam-role"
+  name = "${var.project_name}-lambda-iam-role"
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
   assume_role_policy = jsonencode({
