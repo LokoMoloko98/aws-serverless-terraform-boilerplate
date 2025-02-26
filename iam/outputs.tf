@@ -3,5 +3,5 @@ output "lambda-dynamodb-role-arn" {
 }
 
 output "amplify-service-role-arn" {
-  value = aws_iam_role.AmplifyConsoleServiceRole-AmplifyRole.arn
+  value = aws_iam_role.amplify-service-role.arn
 }
