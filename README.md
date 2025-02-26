@@ -8,7 +8,7 @@
  * Amplify
 
 ## Order of Set up:
-1. set values.tfvars
+1. set terraform.tfvars
 
 2. backend.tf (state file and lock table)
 
